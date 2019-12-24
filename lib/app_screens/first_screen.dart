@@ -14,6 +14,7 @@ class FirstScreen extends StatelessWidget{
           style: TextStyle(
             color: Colors.white,
             fontSize: 34.0,
+            fontFamily: '8BallScript'
           ),
         ),
       ),

@@ -18,8 +18,15 @@ class myFlutterApp extends StatelessWidget{
         title: "my flutter app",
         home: Scaffold(
           appBar: AppBar(
-            title: Text("My first app screen"),
-              ),
+            title: Text("My first app screen",
+            style: TextStyle(
+                decoration: TextDecoration.none,
+              fontSize: 25.0,
+              fontFamily: '8BallScript',
+            ),
+          ),
+
+        ),
           body: FirstScreen()
         )
     )
