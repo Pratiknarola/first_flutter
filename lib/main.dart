@@ -1,15 +1,11 @@
 import 'package:first_flutter/app_screens/first_screen.dart';
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(
-      new myFlutterApp()
-        );
-
-
+void main() {
+  runApp(new myFlutterApp());
 }
 
-class myFlutterApp extends StatelessWidget{
+class myFlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -17,20 +13,16 @@ class myFlutterApp extends StatelessWidget{
         debugShowCheckedModeBanner: false,
         title: "my flutter app",
         home: Scaffold(
-          appBar: AppBar(
-            title: Text("My first app screen",
-            style: TextStyle(
-                decoration: TextDecoration.none,
-              fontSize: 25.0,
-              fontFamily: '8BallScript',
+            appBar: AppBar(
+              title: Text(
+                "My first app screen",
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  fontSize: 25.0,
+                  fontFamily: '8BallScript',
+                ),
+              ),
             ),
-          ),
-
-        ),
-          body: FirstScreen()
-        )
-    )
-    ;
+            body: FirstScreen()));
   }
-
 }
