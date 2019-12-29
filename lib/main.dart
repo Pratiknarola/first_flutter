@@ -1,28 +1,74 @@
-import 'package:first_flutter/app_screens/first_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new myFlutterApp());
+  runApp( MaterialApp(
+    title: 'Stateful widgets',
+    home: FavoriteCity(),
+  ));
 }
 
-class myFlutterApp extends StatelessWidget {
+class FavoriteCity extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return _FavoriteCityState();
+  }
+
+}
+
+class _FavoriteCityState extends State<FavoriteCity> {
+
+  String favCity = "";
+  bool isDone = false;
+  String bigcity = "";
+
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "my flutter app",
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text(
-                "My first app screen",
-                style: TextStyle(
-                  decoration: TextDecoration.none,
-                  fontSize: 25.0,
-                  fontFamily: '8BallScript',
-                ),
-              ),
+    return Scaffold(
+      appBar: AppBar(title: Text("Stateful Widget",),),
+      body: Container(
+        padding: EdgeInsets.all(10.0),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              onSubmitted: (String user){
+                setState(() {
+                  favCity = user;
+                  bigcity = user;
+                });
+
+              },
+
+              onChanged: (String user){
+                setState(() {
+                  favCity = user;
+
+                });
+              },
             ),
-            body: FirstScreen()));
+            Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Text("Your favorite city is $favCity", style: TextStyle(fontSize: 20.0),)
+              ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Text(
+                bigcity,
+                textAlign: TextAlign.center,
+                textDirection: TextDirection.ltr,
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontFamily: "8BallScript"
+                ),
+              )
+            )
+
+          ],
+        ),
+      ),
+    );
   }
+
+
 }
